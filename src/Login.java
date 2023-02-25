@@ -11,7 +11,7 @@ public class Login {
         this.databaseConnection = databaseConnection;
     }
 
-    public void login() {
+    public boolean login() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter username: ");
@@ -31,11 +31,14 @@ public class Login {
 
             if (resultSet.next()) {
                 System.out.println("Login successful!");
+                return true;
             } else {
                 System.out.println("Invalid username or password.");
+                return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 }

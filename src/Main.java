@@ -29,8 +29,7 @@ public class Main {
                         showAllMovies.showAllMovies();
                     } else {
                         Login login = new Login(databaseConnection);
-                        login.login();
-                        isLoggedIn = true;
+                        isLoggedIn = login.login();
                     }
                     break;
                 case 2:
